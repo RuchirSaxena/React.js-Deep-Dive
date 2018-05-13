@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
+import './App.css';
 
 
 class DynamicCounter extends Component{
-    state={counter :0} ;
-    increaseCounter =()=>{
-        this.setState((prevState)=>({
-            counter: prevState.counter + 1
-        }));
-        //can be written as 
-        // this.setState(function (prevState) {
-        //     return { counter: prevState.counter + 1 }
-        // });
-    }
+   handleClick=()=>{
+       this.props.onClickFunction(this.props.incrementValue);
+   }
     render() {
         return(
             <div>
-                Hello this is a Dynamic Component.
-                <button onClick={this.increaseCounter}>{this.state.counter}</button>
+                <p>Hello this is a Dynamic Component.</p>
+                
+                {/* <button onClick={()=>{this.props.onClickFunction(this.props.incrementValue)}}>                       +   {this.props.incrementValue} 
+                </button>
+                 */}
+
+                 {/* OR below way */}
+                
+                <button onClick={this.handleClick}>                       +   {this.props.incrementValue}
+                </button>
             </div>
             
         );
@@ -25,16 +27,26 @@ class DynamicCounter extends Component{
 
 const Result=(props)=>{
     return (
-        <div>test</div>
+        <div>{props.counter}</div>
     );
 }
 
 class DisplayCouter extends Component{
+    state = { counter: 0 };
+    increaseCounter = (value) => {
+        this.setState((prevState) => ({
+            counter: prevState.counter + value
+        }));
+    }
     render(){
         return(
-            <div>
-                <DynamicCounter />
-                <Result />
+            <div className="Container">
+                <DynamicCounter incrementValue={1} onClickFunction={this.increaseCounter}/>
+                <DynamicCounter incrementValue={5} onClickFunction={this.increaseCounter} />
+                <DynamicCounter incrementValue={10} onClickFunction={this.increaseCounter} />
+
+                <br/>
+                <Result counter={this.state.counter} />
             </div>
         )
     }

@@ -21,6 +21,8 @@ Using Javascript to render HTML helps React to keep a copy of it as Virtual DOM 
 later it will only update the part of that DOM rather than the whole DOM , this process
 is called as Tree reconcilation.
 
+
+
 Types of React Component
 ==========================
 1.Functional Component =>Fuction component cannot have state
@@ -100,6 +102,22 @@ class DynamicCounter extends Component{
 }
 
 In Above Example  state={counter :0} ; cannot be accessed outside DynamicCounter component. 
+
+3.Diffrent ways of accesing props in Functional and Class component =>
+In Functional Component =>{props.value}
+In Class Component =>{this.props.value}
+
+4.Diffrent ways of calling functions with argument
+  1st way:
+  <button onClick={()=>{this.props.onClickFunction(this.props.incrementValue)}}> 
+
+  2nd way:
+   handleClick=()=>{
+       this.props.onClickFunction(this.props.incrementValue);
+   }
+   <button onClick={this.handleClick}>                   +   {this.handleClick}
+    </button> 
+
 
 
 
