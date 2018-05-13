@@ -1,0 +1,107 @@
+React JS
+==============
+React JS is a library for building expressive UI's.
+
+Components
+===============
+-Components are Like Fuctions,
+In React Components returns HTLM which is then rendered in the browser.
+-Components are Reusable
+-Can have private state that hold data , which may change over time
+
+Reactive updates
+======================
+-React will automatically react ie. whenever there is a change in the state of a component it will automatically will be reflected unlike JS where we have to manully need to update  the DOM elements
+-Take updates to the browser.
+
+Virtual DOM in memmory
+===========================
+- Write HTML in Javascript 
+Using Javascript to render HTML helps React to keep a copy of it as Virtual DOM and ,
+later it will only update the part of that DOM rather than the whole DOM , this process
+is called as Tree reconcilation.
+
+Types of React Component
+==========================
+1.Functional Component =>Fuction component cannot have state
+2.Class Component =>Class component can have state
+
+Example of a simple  Function Component
+=======================================
+const Button = function(props) {
+  return (
+    <button>{props.text}</button>
+  );
+};
+
+ReactDOM.render(<Button text="Hello" />, mountNode);
+
+Example of a simple  Class Component
+======================================
+class ButtonCounter extends React.Component{
+  state ={ counter:0};
+  handleClick=()=>{
+    this.setState({
+    	counter: this.state.counter + 1
+    })
+    //can also be rewritten as below to improve performance :
+     this.setState((prevState)=>( {
+    	counter: prevState.counter + 1
+    }));
+  };
+	render() {
+      return (
+          <button onClick={this.handleClick}>
+          {this.state.counter}
+          </button>
+      );
+  }
+}
+
+
+ReactDOM.render(<ButtonCounter /> , mountNode);
+
+
+
+Note: Component properties i.e.props  are im-mutable and Functional Components can only have props , Class Component can have props as well as state.
+
+Rules with Component 
+==========================================
+1. Component can return only one element ie. render method can only return 
+one HTML container tag.
+ReactDOM.render(
+    <div>
+        <App />
+        <DynamicCounter />
+    </div>,
+    document.getElementById('root'));
+
+Above , App component and DynamicCounter component are wrapped inside Div tag as render method can only return one element.    
+
+2.Component cannot share its state outside ie. state of the component cannot be accesed outside
+
+class DynamicCounter extends Component{
+    state={counter :0} ;
+    increaseCounter =()=>{
+        this.setState((prevState)=>({
+            counter: prevState.counter + 1
+        }));
+       
+    }
+    render() {
+        return(
+            <div>
+                Hello this is a Dynamic Component.
+                <button onClick={this.increaseCounter}>{this.state.counter}</button>
+            </div>
+            
+        );
+    }
+}
+
+In Above Example  state={counter :0} ; cannot be accessed outside DynamicCounter component. 
+
+
+
+
+
