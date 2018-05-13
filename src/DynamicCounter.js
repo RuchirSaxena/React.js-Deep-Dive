@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-
+//Clss Component
 class DynamicCounter extends Component{
    handleClick=()=>{
        this.props.onClickFunction(this.props.incrementValue);
@@ -24,7 +24,7 @@ class DynamicCounter extends Component{
         );
     }
 }
-
+//Functional Component 
 const Result=(props)=>{
     return (
         <div>{props.counter}</div>
