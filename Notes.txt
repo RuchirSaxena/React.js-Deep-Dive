@@ -119,10 +119,26 @@ In Class Component =>{this.props.value}
         +{this.props.incrementValue}
    </button> 
 
+
  Props and State
 ===================
 1.The input for the component is props ie. set of value properties that can be passed to a component , the props cannot be chaanged by the component but a whole component can be re-created by diffrent props vlaues ie.Reusable Component
 2.A component state can be changed inside the component only using the setState() method and every time a component changes its state a component re-renders itself
+
+Diffrent ways of styling Components
+====================================
+1.className => using className attribute inside the HTML element and passing class name to it defined in the seperate stylesheet.
+Example:
+ <div className="Container"></div>
+
+2.style => using the style attribute inside the HTML element and passing the actual style information to it.
+Example:
+ <div style={{fontSize:'1.25em',fontWeight:'bold'}}>Name Here</div>
+
+Note : In style way the actual style properties are used diffrently ie. using font-size =>fontSize ,font-weight =>fontWeight
+
+
+
 
 
 
