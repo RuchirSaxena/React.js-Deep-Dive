@@ -4,19 +4,15 @@ import './index.css';
 //Including components
 import App from './App';
 import DisplayCouter from './DynamicCounter';
-import CardList from './GitHubCardComponent/GithubCard';
-import data from './GitHubCardComponent/cardData';
-
-
-
-//import registerServiceWorker from './registerServiceWorker';
+import GithubApp from './GitHubCardComponent/GithubApp';
 
 
 ReactDOM.render(
     <div className="Container">
         <App />
         <DisplayCouter />
-        <CardList cards={data} />
+        <GithubApp/>
+       
     </div>,
     document.getElementById('root'));
-//registerServiceWorker();
+

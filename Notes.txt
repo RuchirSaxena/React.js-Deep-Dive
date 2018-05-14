@@ -137,8 +137,56 @@ Example:
 
 Note : In style way the actual style properties are used diffrently ie. using font-size =>fontSize ,font-weight =>fontWeight
 
+Diffrent ways of working with event
+====================================
+1.Getting value from an input control and using inside function:
+
+1st Way:
+//using ref attribute of react to get the reference of textbox value
+ <input type="text" placeholder="Github Username"
+ ref={(input)=>this.userName=input}/>
 
 
+//Getting value inside the function
+ handleSubmit=(event)=>{
+        //every  event in React  receives a native javascript event object 
+        event.preventDefault();
+        console.log('Event:Form submit:',this.userName.value);
+    };               
+
+ Note : we could havre assigned id to the textbox and got its value using document.getElementById() native javascript function
+Example :
+2nd Way:
+//using the id property on textbox
+ <form onSubmit={this.handleSubmit}>
+                <input type="text" placeholder="Github Username"
+                id="txtUserName"/>
+ </form>
+
+
+//Getting the value
+ handleSubmit=(event)=>{
+        event.preventDefault();
+        console.log('Event:Form submit:', document.getElementById("txtUserName").value);
+    };
+
+3rd way:
+//using the state of React component
+<form onSubmit={this.handleSubmit}>
+                <input type="text" placeholder="Github Username"
+                    // Another way below using state
+                    value={this.state.userName}
+                    onChange={(event)=>this.setState({userName:event.target.value})}
+                />
+                <button type="submit">Add Card</button>
+</form>
+
+//Getting value inside the function
+ handleSubmit=(event)=>{
+        //every  event in React  receives a native javascript event object 
+        event.preventDefault();
+        console.log('Event:Form submit:',this.userName.value);
+    };    
 
 
 
