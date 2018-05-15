@@ -14,10 +14,10 @@ const GithubCard = (props) => {
 }
 
 const CardList = (props) => {
-    console.log("CardList:",props);
+    console.log("CardList:", props);
     return (
         <div>
-            {props.cards.map(card => <GithubCard {...card} />)}
+            {props.cards.map(card => <GithubCard key={card.id} {...card} />)}
         </div>
     )
 }
