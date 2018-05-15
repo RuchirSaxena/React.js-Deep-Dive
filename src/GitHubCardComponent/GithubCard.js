@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 const GithubCard = (props) => {
     console.log(props);
     return (
@@ -15,6 +14,7 @@ const GithubCard = (props) => {
 }
 
 const CardList = (props) => {
+    console.log("CardList:",props);
     return (
         <div>
             {props.cards.map(card => <GithubCard {...card} />)}

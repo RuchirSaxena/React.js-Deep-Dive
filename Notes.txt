@@ -189,5 +189,23 @@ Example :
     };    
 
 
+How to set the use setState() in component
+=============================================
+setState() method is used to set the values to state object and when the value of state variables are changed from there prevState the component will re-render itself automatically.
+Usage:
+  state={
+        cards:[]
+    }
+  //Below code needs to be present inside the function
+
+  this.setState(prevState=>({
+            cards:prevState.cards.concat(cardInfo)
+        }));
+
+Note: setState() method can take 1 arguments also ie.prevState in above eg. 
+
+
+
+
 
 

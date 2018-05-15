@@ -9,9 +9,10 @@ class InputCardData extends Component {
         //console.log('Event:Form submit:', this.userName.value);
         //Getting data from server
         fetch(`https://api.github.com/users/${tempUserName}`)
-        .then(response=>{
-           // console.log(response);
-            this.props.onSubmit(response);
+        .then(response=>response.json())
+        .then(data=>{
+            console.log(data);
+            this.props.onSubmit(data);
         });
     };
 

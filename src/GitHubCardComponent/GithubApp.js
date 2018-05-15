@@ -6,14 +6,14 @@ import data from './cardData';
 
 class GithubApp extends Component {
     state={
-        cards:data
+        cards:[]
     }
     
     addNewCard=(cardInfo)=>{
         console.log(cardInfo);
-        this.setState(prevState=>{
-            cards:prevState.cards.concat(cardInfo);
-        });
+        this.setState(prevState=>({
+            cards:prevState.cards.concat(cardInfo)
+        }));
     };
 
     render() {
