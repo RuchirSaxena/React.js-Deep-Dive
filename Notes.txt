@@ -204,7 +204,42 @@ Usage:
 
 Note: setState() method can take 1 arguments also ie.prevState in above eg. 
 
+Passing Values to Child Components
+=======================================
+Parents component can pass on Javascript Primitive values or Function Expressions
+to the child , the function defination will be a part of Parent Component which can be passed on to the child Components using props , further these child component can invoke/call these passed functions from Parent Component and we can pass in the values of child component as arguments to the function defined in the Parent component ,
+Usefull scenarios :-
+this is useful in scenarios where 2 child Components depends on the state defined in the Parent Component and using setState() method will update the state which will drilldown  and re-renders the Dom if state changes
 
+Example:
+
+class GithubApp extends Component {
+    state={
+        cards:[]
+    }
+    
+    addNewCard=(cardInfo)=>{
+        console.log(cardInfo);
+        this.setState(prevState=>({
+            cards:prevState.cards.concat(cardInfo)
+        }));
+    };
+
+    render() {
+        return (
+            <div>
+                <InputCardData onSubmit={this.addNewCard} />
+                <CardList cards={this.state.cards} />
+            </div>
+        );
+    }
+}
+
+In Above Example , GithubApp is a Parent component and InputCardData and CardList are the child Components which are dependent on the State value =>Cards ,
+InputCardData =>Fetchs new information from server 
+CardList => Displays card information
+
+Now , when the addNewCard() receives a new card information from the InputCardData data then the Cards state in the GithubApp component is update which Results in Triggering the re-reder of DOM as the old state is chaanged.
 
 
 
