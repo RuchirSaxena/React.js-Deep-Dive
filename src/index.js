@@ -6,13 +6,13 @@ import App from './App';
 import DisplayCouter from './DynamicCounter';
 import GithubApp from './GitHubCardComponent/GithubApp';
 
-
-ReactDOM.render(
+var app = (
     <div className="Container">
         <App />
         <DisplayCouter />
-        <GithubApp/>
-       
-    </div>,
-    document.getElementById('root'));
+        <GithubApp />
+    </div>
+);
+
+ReactDOM.render(app,document.getElementById('root'));
 
