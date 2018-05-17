@@ -23,6 +23,7 @@ is called as Tree reconcilation.
 
 
 
+
 Types of React Component
 ==========================
 1.Functional Component =>Fuction component cannot have state
