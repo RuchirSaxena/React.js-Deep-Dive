@@ -243,5 +243,33 @@ CardList => Displays card information
 Now , when the addNewCard() receives a new card information from the InputCardData data then the Cards state in the GithubApp component is update which Results in Triggering the re-reder of DOM as the old state is chaanged.
 
 
+Component Life Cycle Hooks
+============================
+componentWillMount() =>It fires of when the component re-renders itself ,
+If fetching data from the server we should do it inside this method.
+
+
+propType in React
+==================
+propType are used to set the types of props ussed in a component , it helps in setting the props datatype .
+
+Eg:
+    AddProject.propType={
+        categories:PropTypes.array,
+        handelSubmit:PropTypes.func,
+        
+
+    };
+
+
+Above , AddProject is the name of the component and categories and handelSubmit are the 2 props present in this component and using the propType we are adding there types.
+We can also set validation for theses PropTypes .
+
+Note : Setting  the propType  will not Results in any error if correct proptypes are not assigned to it and only gives a warning in the console.
+
+
+
+
+
 
 
