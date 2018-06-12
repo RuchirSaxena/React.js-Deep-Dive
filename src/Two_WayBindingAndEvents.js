@@ -31,7 +31,7 @@ class Two_WayBindingAndEvents extends Component{
                 <span>======</span>
                 <input type="button" onClick={() => this.updateData("Start journey for React2")} value="UpdateData Way2" className="btn btn-primary" /><br /> <br /> 
                 <input type="text" className="form-control" onChange={this.updateData} value={this.state.someVal}/>
-                <div>{this.state.someVal}</div>
+                <div className="bg-info">{this.state.someVal}</div>
             </div>
         );
     }
