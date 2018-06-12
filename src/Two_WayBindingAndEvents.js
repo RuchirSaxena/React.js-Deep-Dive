@@ -10,7 +10,7 @@ class Two_WayBindingAndEvents extends Component{
     }
 
     updateData=(newValue)=>{
-        debugger;
+      
        let updatedValue="";
         if (typeof newValue==='string'){
            updatedValue=newValue;
