@@ -1,11 +1,10 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 
-const template1 = (
-    <React.Fragment>
-        <div>Hello from JSX</div>
-    </React.Fragment>
-);
+
+
+
 
 let user = {
     userName: "Ruchir Saxena",
@@ -17,7 +16,7 @@ function getLocation() {
         return <p>Location: {user.location}</p>;
     }
 }
-const template = (
+const template2 = (
     <React.Fragment>
         <h1>
             {user.userName ? user.userName.toUpperCase() : "Anonymous"}
@@ -32,6 +31,59 @@ const template = (
     </React.Fragment>
 );
 
-export default template;
+let count = 0;
+const addOne = () => {
+    count++;
+    reRender();
+    console.log('add one called',count);
+};
+
+const minusOne=()=>{
+    count--;
+    reRender();
+    console.log('minus one called');
+}
+const resetCount=()=>{
+    count=0;
+    reRender();
+     console.log("reset count called");
+}
+
+// const template = (
+//     <div>
+//         <h1>Count:{count}</h1>
+//         <input type="button" onClick={addOne} value="+1" /><br/>
+//         <input type="button" onClick={minusOne} value="-1" /><br/>
+//         <input type="button" onClick={resetCount} value="Reset Count" />
+       
+//     </div>
+
+// );
+const template1 = (
+    <React.Fragment>
+      
+    </React.Fragment>
+);
+
+const reRender=()=>{
+
+   
+    const template = (
+        <div>
+            <h1>Count:{count}</h1>
+            <input type="button" onClick={addOne} value="+1" /><br />
+            <input type="button" onClick={minusOne} value="-1" /><br />
+            <input type="button" onClick={resetCount} value="Reset Count" />
+
+        </div>
+
+    );
+    ReactDOM.render(template
+        , document.getElementById('root'));
+}
+
+
+
+export {  reRender};
 
 

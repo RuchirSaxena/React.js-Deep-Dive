@@ -5,8 +5,10 @@ import './index.css';
 // import ToDoList from './ToDoList/ToDoList';
 // import Two_WayBindingAndEvents from "./Two_WayBindingAndEvents";
 
-import template from './ExploringJSX'
+import { reRender} from './ExploringJSX'
 
-ReactDOM.render(template
-    ,document.getElementById('root'));
+reRender();
+
+
+
 
