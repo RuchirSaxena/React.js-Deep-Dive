@@ -2,9 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 //import App from './App';
-import ToDoList from './ToDoList/ToDoList';
-import Two_WayBindingAndEvents from "./Two_WayBindingAndEvents";
+// import ToDoList from './ToDoList/ToDoList';
+// import Two_WayBindingAndEvents from "./Two_WayBindingAndEvents";
 
-ReactDOM.render(<Two_WayBindingAndEvents/>
+import template from './ExploringJSX'
+
+ReactDOM.render(template
     ,document.getElementById('root'));
 
