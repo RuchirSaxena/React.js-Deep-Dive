@@ -2,13 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 //import App from './App';
-// import ToDoList from './ToDoList/ToDoList';
+ import ToDoList from './ToDoList/ToDoList';
 // import Two_WayBindingAndEvents from "./Two_WayBindingAndEvents";
 
-import { reRender} from './ExploringJSX'
+import  template from './ExploringJSX'
+import LifeCycleMethods from './LifeCycleEvents'
 
-reRender();
-
-
-
+ReactDOM.render(<LifeCycleMethods data="recevied props"/>
+    ,document.getElementById('root'));
 

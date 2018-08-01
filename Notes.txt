@@ -267,6 +267,48 @@ We can also set validation for theses PropTypes .
 
 Note : Setting  the propType  will not Results in any error if correct proptypes are not assigned to it and only gives a warning in the console.
 
+React LifeCycle Methods
+=========================
+React component LifeCycle can be divided into 4 phases=>
+1.Initilization
+2.Mounting
+3.Updating
+4.Unmounting
+
+Initilization=>
+1.getDefaultProps()
+2.getInitialState()
+
+Mounting=>
+1.Constructor()
+2.componentWillMount()
+3.reder()
+4.componentDidMount()
+
+Updating=>
+1.componentWillReceiveProps()
+2.shouldComponentUpdate()
+3.componentWillUpdate()
+4.render()
+5.componentDidUpdate()
+
+Unmounting=>
+1.componentWillUnmount()
+
+All methods in Order
+======================
+1.componentWillMount()
+2.componentDidMount()
+3.componentWillReceiveProps()
+4.shouldComponentUpdate()
+5.componentDidUpdate()
+6.componentWillUnmount()
+
+
+
+
+
+
 
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
 
 
 
@@ -33,57 +33,31 @@ const template2 = (
 
 let count = 0;
 const addOne = () => {
-    count++;
-    reRender();
-    console.log('add one called',count);
+    console.log('add one called');
 };
 
 const minusOne=()=>{
-    count--;
-    reRender();
+   
     console.log('minus one called');
 }
 const resetCount=()=>{
-    count=0;
-    reRender();
      console.log("reset count called");
 }
-
-// const template = (
-//     <div>
-//         <h1>Count:{count}</h1>
-//         <input type="button" onClick={addOne} value="+1" /><br/>
-//         <input type="button" onClick={minusOne} value="-1" /><br/>
-//         <input type="button" onClick={resetCount} value="Reset Count" />
+const template = (
+    <div>
+        <h1>Count:{count}</h1>
+        <input type="button" onClick={addOne} value="+1" /><br/>
+        <input type="button" onClick={minusOne} value="-1" /><br/>
+        <input type="button" onClick={resetCount} value="Reset Count" />
        
-//     </div>
+    </div>
 
-// );
+);
 const template1 = (
     <React.Fragment>
-      
+        {console.log(template)}
     </React.Fragment>
 );
-
-const reRender=()=>{
-
-   
-    const template = (
-        <div>
-            <h1>Count:{count}</h1>
-            <input type="button" onClick={addOne} value="+1" /><br />
-            <input type="button" onClick={minusOne} value="-1" /><br />
-            <input type="button" onClick={resetCount} value="Reset Count" />
-
-        </div>
-
-    );
-    ReactDOM.render(template
-        , document.getElementById('root'));
-}
-
-
-
-export {  reRender};
+export default template;
 
 
